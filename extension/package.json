@@ -1,0 +1,13 @@
+{
+  "name": "axis-extension",
+  "version": "1.0.0",
+  "description": "Axis email tracker chrome extension build manifest",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.263",
+    "esbuild": "^0.20.1",
+    "typescript": "^5.3.3"
+  }
+}
