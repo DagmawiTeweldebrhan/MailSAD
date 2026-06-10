@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "Axis Tracker Extension",
+  "version": "1.0.0",
+  "description": "Privacy-first, zero-latency email tracking pixel and link redirect injector for Gmail.",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "identity"
+  ],
+  "host_permissions": [
+    "*://mail.google.com/*",
+    "http://localhost:8000/*",
+    "https://api.axis.com/*"
+  ],
+  "background": {
+    "service_worker": "dist/background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://mail.google.com/*"
+      ],
+      "js": [
+        "dist/content.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "action": {
+    "default_title": "Axis Tracker"
+  },
+  "oauth2": {
+    "client_id": "1234567890-dummyapps.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/userinfo.email"
+    ]
+  }
+}
