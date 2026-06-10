@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-brand-bg text-brand-primary font-sans antialiased selection:bg-brand-accent selection:text-black;
+  }
+}
+
+@layer components {
+  /* Brutalist elevated panel with hard white border and flat offset shadow */
+  .brutalist-card {
+    @apply bg-brand-surface border border-brand-border p-6;
+    box-shadow: 4px 4px 0px #FAFAFA;
+  }
+
+  .brutalist-card-red {
+    @apply bg-brand-surface border border-brand-accent p-6;
+    box-shadow: 4px 4px 0px #FF3333;
+  }
+
+  /* Brutalist button style with instant hover inversion */
+  .brutalist-btn {
+    @apply border border-brand-primary text-brand-primary bg-transparent font-mono font-bold uppercase tracking-tight py-2 px-6 duration-0 select-none;
+    border-radius: 0px !important;
+  }
+  
+  .brutalist-btn:hover {
+    @apply bg-brand-primary text-[#0A0A0A];
+  }
+
+  /* Harsh Red action button */
+  .brutalist-btn-accent {
+    @apply border border-brand-accent text-brand-accent bg-transparent font-mono font-bold uppercase tracking-tight py-2 px-6 duration-0 select-none;
+    border-radius: 0px !important;
+  }
+
+  .brutalist-btn-accent:hover {
+    @apply bg-brand-accent text-black;
+  }
+
+  /* Minimalist input field with sharp borders */
+  .brutalist-input {
+    @apply bg-brand-surface border border-brand-border text-brand-primary py-2 px-4 focus:outline-none focus:border-brand-accent font-mono text-sm placeholder:text-brand-secondary;
+    border-radius: 0px !important;
+  }
+}
